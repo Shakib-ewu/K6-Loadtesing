@@ -6,13 +6,6 @@ export const options = {
   iterations: 10,
 };
 
-const token = __ENV.GITHUB_TOKEN; // Load the token from an environment variable
-
-let headers_api = {
-  Authorization: `Bearer ${token}`,
-  "User-Agent": "k6-loadtest",
-  "Accept": "application/vnd.github.v3+json",
-};
 
 export default function () {
   const response = http.get("https://api.github.com/user/repos", { headers: headers_api });

@@ -8,13 +8,12 @@ export const options = {
 
 
 export default function () {
-  const response = http.get("https://api.github.com/user/repos", { headers: headers_api });
+  const response = http.get("https://test.k6.io");
 
-  console.log(`Response status: ${response.status}`);
-  console.log(`Response body: ${response.body}`);
+ 
 
   check(response, {
-    'status code is 200': (r) => r.status === 200
+    'status code is 200': (response) => response.status === 200
   });
 
   sleep(1);

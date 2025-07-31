@@ -18,13 +18,16 @@ export const options = {
 export default async function () {
     const page = await browser.newPage();
     page.setViewportSize(
+        { width: 430, height: 812 }  // Set viewport size for mobile testing
+    );
+    await page.setViewportSize(
 
         { width: 375, 
-          height: 812, 
-          name: "Mobile (iPhone X)" },
-    )
+          height: 812 },
+    );
     await page.goto("https://rubinoshoes.com/");
     
     // Close the browser after visiting the page
     await page.close();
 }
+

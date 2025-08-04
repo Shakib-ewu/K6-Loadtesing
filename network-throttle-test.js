@@ -20,7 +20,7 @@ export default async function () {
     page.setViewportSize(
         { width: 430, height: 812 }  // Set viewport size for mobile testing
     );
-    const networkProfile = networkProfiles['Slow 3G']; // Use Slow 3G profile
+    const networkProfile = networkProfiles['Fast 3G']; // Use Fast 3G profile
     await page.goto("https://rubinoshoes.com/", { waitUntil: 'networkidle' });
 
     // Close the browser after visiting the page
